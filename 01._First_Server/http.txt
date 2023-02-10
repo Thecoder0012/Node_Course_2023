@@ -1,0 +1,6 @@
+Url anatomy
+
+protocol
+
+|Protocol domain      endpoint path v (id) query string
+http://localhost:8080/kickdinosaur/:id?size=1200
