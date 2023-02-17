@@ -1,7 +1,10 @@
 const express = require('express');
 const app = express();
 
+app.use(express.json());
+
 // we use json because every language has a interpreter that understand json. Object notation of javascript.
+// with get requests you can send data with path variables and query strings.
 app.get("/",(req,res) => {
     res.send({message: "Our first route"});
 });
@@ -29,8 +32,12 @@ app.get("/bat",(req,res) => {
     res.send({message: `The bat is ${req.query.adjective}`})
 });
 
+// path variable
 app.get("/bottle/:bottleSize",(req,res) => {
     res.send({message: `The Bottle is ${req.params.bottleSize}`})
 });
 
+app.post("/post",(req,res) => {
+    res.send(req.body)
+})
 app.listen(8080);
