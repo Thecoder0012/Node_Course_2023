@@ -36,6 +36,10 @@ app.get("/visitors", (req, res) => {
 });
 
 
+app.get("/date", (req, res) => {
+  res.sendFile(__dirname + "/public/date/date.html");
+});
+
 const PORT = 8080;
 app.listen(PORT, (error) => {
   if (error) {
