@@ -5,7 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Date</title>
-    <script defer src="./date.js"></script>
   </head>
   <body bgcolor="powderblue">
     <div style="display: grid; place-items: center">
@@ -16,5 +15,33 @@
 
       <div class="text-container"></div>
     </div>
+
+    <script>
+      const textcont = document.querySelector(".text-container");
+      let text;
+      function getText() {
+        let dateValue = document.querySelector(".date-input").value;
+        let dateObj = new Date(dateValue);
+        let dateFormatted = new Date(dateValue).toLocaleDateString("dk");
+        let values = dateFormatted.split(".");
+        let year = parseInt(values[2]);
+
+        if (
+          (year % 4 === 0 && year % 100 !== 0) ||
+          year % 400 == 0 ||
+          (year % 100 === 0 && year % 400 !== 0)
+        ) {
+          text = document.createElement("h1");
+          text.innerText = `${dateObj.getFullYear()} is a leap year`;
+          textcont.appendChild(text);
+          return;
+        } else {
+          text = document.createElement("h1");
+          text.innerText = `${dateObj.getFullYear()} is not a leap year`;
+          textcont.appendChild(text);
+          return;
+        }
+      }
+    </script>
   </body>
 </html>
