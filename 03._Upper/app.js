@@ -16,6 +16,10 @@ app.get("/quests", (req, res) => {
   res.sendFile(path.resolve("public/pages/quests/quests.html")); // path.resolve() gives absolute path for a file
 });
 
+app.get("/jokes", (req, res) => {
+  res.sendFile(path.resolve("public/pages/jokes/jokes.html")); // path.resolve() gives absolute path for a file
+});
+
 app.listen(8080, (error) => {
   if (error) console.log(error);
   console.log("App started on port", 8080);
