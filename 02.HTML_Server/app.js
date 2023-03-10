@@ -9,10 +9,10 @@ app.use(express.static('public')); // express has a static folder named public
 //   {name: "Tiger"}  
 // ];
 
-const tanksUtility = require('./utilities/tanks.js');
-console.log(tanksUtility.getTanks());
+// const tanksUtility = require('./utilities/tanks.js');
+// console.log(tanksUtility.getTanks());
 const {getTanks,addTank} = require("./utilities/tanks.js");
-console.log(getTanks());
+
 
 
 let visitorCount = 0;
@@ -34,7 +34,7 @@ app.get("/guards", (req, res) => {
 });
 
 app.get('/api/tanks', (req,res) => {
-  res.send({data: tanks})
+  res.send({data: getTanks()})
 })
 
 app.get("/api/visitors", (req, res) => {
