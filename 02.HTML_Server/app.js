@@ -1,28 +1,26 @@
 /* eslint-disable semi */
-const express = require('express');
+const express = require("express");
 const app = express();
 
-app.use(express.static('public')); // express has a static folder named public
+app.use(express.static("public")); // express has a static folder named public
 
 // const tanks = [
 //   {name: "Leopard", age: 50},
-//   {name: "Tiger"}  
+//   {name: "Tiger"}
 // ];
 
 // const tanksUtility = require('./utilities/tanks.js');
 // console.log(tanksUtility.getTanks());
-const {getTanks,addTank} = require("./utilities/tanks.js");
-
-
+const { getTanks, addTank } = require("./utilities/tanks.js");
 
 let visitorCount = 0;
 
-app.get('/', (req, res) => {
+app.get("/", (req, res) => {
   res.sendFile(`${__dirname}/public/frontpage/index.html`);
 });
 
-app.get('/tanks', (req, res) => {
-  res.sendFile(__dirname + '/public/tanks/tanks.html');
+app.get("/tanks", (req, res) => {
+  res.sendFile(__dirname + "/public/tanks/tanks.html");
 });
 
 app.get("/date", (req, res) => {
@@ -33,9 +31,9 @@ app.get("/guards", (req, res) => {
   res.sendFile(__dirname + "/public/museumGuards/museumGuards.html");
 });
 
-app.get('/api/tanks', (req,res) => {
-  res.send({data: getTanks()})
-})
+app.get("/api/tanks", (req, res) => {
+  res.send({ data: getTanks() });
+});
 
 app.get("/api/visitors", (req, res) => {
   res.send({ data: visitorCount });
@@ -49,6 +47,16 @@ app.get("/visitors", (req, res) => {
   res.sendFile(__dirname + "/public/visitors/visitors.html");
 });
 
+app.get("/api/guards", (req, res) => {
+  // query string or path variable to send data with a get request.
+
+  const query = req.query;
+  if(query.pass === "secret"){
+    return res.redirect("/api/tanks"); // return stop the execution here and does not execute lines after.
+  }
+
+  res.send({ message: "You are not allowed to see the the tanks. Type in the secret to see the tanks." });
+});
 
 const PORT = 8080;
 app.listen(PORT, (error) => {
@@ -56,5 +64,5 @@ app.listen(PORT, (error) => {
     console.log(error);
     return;
   }
-  console.log('Port started on', PORT);
+  console.log("Port started on", PORT);
 });
