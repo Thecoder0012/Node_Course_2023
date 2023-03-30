@@ -1,0 +1,30 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* .img-container {
+  background-image: url("../../assets/images/node.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+} */
+
+body {
+  height: 100%;
+  background-color: aliceblue;
+}
+
+.header {
+  position: absolute;
+  width: 45%;
+  left: 53%;
+  top: 30%;
+  transform: translate(-50%, -50%);
+}
+
+.header h1 {
+  font-size: 2em;
+  font-weight: 400;
+}

@@ -1,0 +1,29 @@
+nav {
+  position: absolute;
+  background-color: #333;
+  height: 40px;
+  text-align: center;
+  width: 100%;
+}
+
+nav a {
+  color: white;
+  position: relative;
+  font-size: 1.3em;
+  top: 15%;
+  text-decoration: none;
+  padding: 10px 30px;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+
+/* #logo {
+  position: relative;
+  right: 40%;
+  height: 50px;
+  width: 60px;
+  border-radius: 10px;
+} */
