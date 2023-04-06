@@ -1,6 +1,6 @@
 import fs from "fs";
 
-function render(page, config = {}) {
+function render(page) {
   const navbar = fs
     .readFileSync("./public/components/navbar/navbar.html")
     .toString();
@@ -12,25 +12,73 @@ function read(pagePath) {
 }
 
 function renderLoginPage() {
-  const loginPage = read("./public/pages/login/login.html");
-  return loginPage;
+  const path = read("./public/pages/login/login.html");
+  return path;
 }
 
 function renderDocsPage() {
-  const docsPath = read("./public/pages/documentation/documentation.html");
-  const docsPage = render(docsPath, {});
-  return docsPage;
+  const path = read("./public/pages/documentation/documentation.html");
+  const page = render(path);
+  return page;
+}
+
+function renderDocsIntro() {
+  const path = read("./public/pages/documentation/intro.html");
+  const page = render(path);
+  return page;
+}
+
+function renderDocsExpress() {
+  const path = read("./public/pages/documentation/express.html");
+  const page = render(path);
+  return page;
+}
+
+function renderDocsHtml() {
+  const path = read("./public/pages/documentation/rendering.html");
+  const page = render(path);
+  return page;
+}
+
+function renderDocsRedirection() {
+  const path = read("./public/pages/documentation/redirect.html");
+  const page = render(path);
+  return page;
+}
+
+function renderDocsSSR() {
+  const path = read("./public/pages/documentation/ssr.html");
+  const page = render(path);
+  return page;
+}
+
+function renderDocsTime() {
+  const path = read("./public/pages/documentation/time.html");
+  const page = render(path);
+  return page;
+}
+
+function renderDocsExport() {
+  const path = read("./public/pages/documentation/export.html");
+  const page = render(path);
+  return page;
+}
+
+function renderDocsTools() {
+  const path = read("./public/pages/documentation/tools.html");
+  const page = render(path);
+  return page;
 }
 
 function renderNewPage() {
-  const newPagePath = read("./public/pages/newPage/newPage.html");
-  const newPage = render(newPagePath, {});
-  return newPage;
+  const path = read("./public/pages/newPage/newPage.html");
+  const page = render(path);
+  return page;
 }
 function renderHomePage() {
-  const homePath = read("./public/pages/index/index.html");
-  const homePage = render(homePath, {});
-  return homePage;
+  const path = read("./public/pages/index/index.html");
+  const page = render(path);
+  return page;
 }
 
 export default {
@@ -40,4 +88,12 @@ export default {
   renderLoginPage,
   renderDocsPage,
   renderNewPage,
+  renderDocsIntro,
+  renderDocsExpress,
+  renderDocsExport,
+  renderDocsHtml,
+  renderDocsRedirection,
+  renderDocsTime,
+  renderDocsSSR,
+  renderDocsTools
 };

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Express</title>
+    <link rel="stylesheet" href="../../assets/css/index.css" />
+    <link rel="stylesheet" href="../../assets/css/docs.css" />
+
+</head>
+
+<body>
+
+    <div class="header-intro">
+        <h1>Express/functions</h1><br>
+        <p>Express is a fast web framework for Node JS:</p>
+        <p>To use express in a Node project, you need to install it with Node Package Manager (npm).</p>
+        <pre>
+            <code>npm install express</code>
+        </pre>
+        <p>When installed you need to import/require it and then instantiate it. For this documentation, I will use the
+            way of es modules.</p>
+            <p>Installing it also sends the dependency to the file called package.json which has information about about our project and dependencies.</p>
+        <pre>
+            <code>
+                import express from 'express';
+                const app = express();
+            </code>
+        </pre>
+        <p>You can use express to easily create backend routes</p>
+        <p>Here I will map a http get request to "/" and the callback function be executed.
+            <br>The callback function takes a request and response object.
+        </p>
+        <pre>
+            <code>
+                app.get("/", (req, res) => {
+                  res.send({message: "Hello World!"});
+                });
+            </code>
+        </pre>
+        <p>Lastly, you need to start the server on a specfic port</p>
+        <pre>
+            <code>
+                app.listen(8080, () => {
+                  console.log("Server started on port:", 8080);
+                });
+            </code>
+            </pre>
+
+            <p>There are three ways to define a function in JavaScript.</p>
+            <pre>
+                <code>
+                    function sum(a,b){ // function declaration
+                        return a + b;
+                    }
+                    const sum = function(a,b){ // function expression
+                        return a + b;
+                    }
+
+                    const sum = (a,b) => { // arrow function
+                        return a + b;
+                    } 
+                </code>
+            </pre>
+    </div>
+
+</body>
+
+</html>

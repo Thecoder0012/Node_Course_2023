@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intro</title>
+    <link rel="stylesheet" href="../../assets/css/index.css" />
+    <link rel="stylesheet" href="../../assets/css/docs.css" />
+
+</head>
+<body>
+
+    <div class="header-intro">
+        <h1>Variables/data types and REST conventions</h1><br>
+        <p>Variables are defined with these keywords:</p>
+        <pre>
+            <code>let, var, const.</code>
+            <p>Define varibale and assign it a value:</p>
+            <code>const country = "Denmark"</code>
+        </pre>
+        <p>The difference between let and var is about scoping, and that those variables may be reassigned.</p>
+        <p>However, it is not possible to reassign a const variable.</p>
+        <p>The most common data types are:</p>
+         <pre>
+            <code>String, Number, Boolean, Undefined, Null, Object.</code>
+        </pre>
+
+        <p>RESTful web services is a way to expose apis that contains data about something specific. <br>The protocol used is http.
+            Apis can be created for anything. For instance cars.<br> The http requests will then be send to a defined car endpoint.
+        </p>
+
+        <pre>
+            <code>
+                get request ("/cars")
+                post request ("/cars")
+                get request ("/cars/id")
+                put request ("/cars/id")
+                patch request ("/cars/id")
+                delete request ("/cars/id")
+            </code>
+        </pre>
+
+    </div>
+    
+</body>
+</html>

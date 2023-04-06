@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Redirection</title>
+    <link rel="stylesheet" href="../../assets/css/index.css" />
+    <link rel="stylesheet" href="../../assets/css/docs.css" />
+  </head>
+  <body>
+    <div class="header-intro">
+      <h1>Server side rendering</h1>
+      <br />
+      <p>
+        If you want to redirect in the client, you can use the window object.
+      </p>
+
+      <pre>
+            <code>
+                window.location = "/home";
+                window.location.href = "/home";
+                window.location.assign("/home");
+                window.location.replace("/home"); // no going back to the Referer page (where the request is sent from)
+            </code>
+        </pre>
+      <p>
+        Redirection in the backend with express can also be done quite easily.
+      </p>
+
+      <pre>
+            <code>
+                app.post("/login", (req, res) => {
+                const { username, password } = req.body;
+
+                if (username === "User" && Number(password) === 1234) {
+                    res.redirect("/homepage");
+                } else {
+                    res.redirect("/");
+                }
+            });
+            </code>
+        </pre>
+      <p>
+       In the above code, we see that the redirection is used with the response object - <br>
+       meaning that the server redirects you based on the if conditions.
+      </p>
+    </div>
+  </body>
+</html>

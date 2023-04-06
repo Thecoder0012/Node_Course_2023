@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Export/import</title>
+    <link rel="stylesheet" href="../../assets/css/index.css" />
+    <link rel="stylesheet" href="../../assets/css/docs.css" />
+  </head>
+  <body>
+    <div class="header-intro">
+      <h1>Export/import</h1>
+      <br />
+      <p>
+        There are two ways to export/import in JavaScript. Either by using Commonjs or
+        the type module (ES module).
+      </p>
+      <p></p>
+
+      <p>Example of Commonjs:</p>
+      <pre>
+            <code>
+            module.exports{function}
+            const function = require('function.js');   
+            </code>
+        </pre>
+
+        <p>Example of ES module</p>
+
+        <pre>
+            <code>
+                export function(){}
+                import function from 'function.js'
+
+                export default {
+                    function1,
+                    function2
+                }
+
+                import func from 'function.js'
+                func.function1();
+            </code>
+        </pre>
+      <p>
+        In a html file it is also possible to specify the module in a script tag if you want to that file to use the ES module:
+      </p>
+      <pre>
+        <code>
+            script type="module" src="script.js">/script
+        </code>
+      </pre>
+
+      <p>
+        How to avoid Cross Site Scripting(XSS) in html/javascript.
+        There are a couple of ways to avoid it.
+      </p>
+      <p>Firstly, you should stop using innerHTML in the DOM. Instead use: innerText or textContent</p>
+      <br><p>Or you can manually create html elements by using createElement </p>
+    </div>
+  </body>
+</html>

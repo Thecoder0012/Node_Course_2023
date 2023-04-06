@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Time-Date</title>
+    <link rel="stylesheet" href="../../assets/css/index.css" />
+    <link rel="stylesheet" href="../../assets/css/docs.css" />
+  </head>
+  <body>
+    <div class="header-intro">
+      <h1>Time/date and fetch</h1>
+      <br />
+      <p>There are several ways to work with time and date in JavaScript.
+      </p>
+      <p>The most general way to use date and time is to use the Date class and instantiate an object from it.</p>
+
+      <pre>
+            <code>
+            const date = new Date();
+            const year = date.getFullYear();
+            </code>
+        </pre>
+        <p>It is also possible without the new keyword. <br>Without the new keyword, you get some additional info about the datetime.</p>
+
+        <pre>
+            <code>
+              const date = Date();
+              console.log(date) // Sat Apr 02 2023 14:43:20 GMT+0200 (Central european summer time)
+            </code>
+        </pre>
+      <p>
+       Fetching from apis can be done with the Fetch Api.<br>Either with async await or with promises
+      </p>
+    
+      <pre>
+            <code>Fetch("api/bikes")
+                .then(response => response.json())
+                .then(result => console.log(result))</code>
+        </pre>
+        <pre>
+            <code>
+                const bikes = async () => {
+                    const response = await fetch("api/bikes");
+                    const result = await response.json();
+                }
+            </code>
+        </pre>
+      <p>
+    
+      </p>
+
+  
+    </div>
+  </body>
+</html>

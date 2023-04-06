@@ -1,0 +1,52 @@
+.form-container{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.form{
+    margin: 5%;
+}
+
+.form input,textarea {
+    margin-top: 5%;
+    position: relative;
+    right: 4%;
+    width: 300px;
+}
+
+#create-page {
+    font-family: Lora, serif;
+    font-weight: 400;
+    font-size: 1.5em;
+    width: 100%;
+    height: 0%;
+    color: white;
+    border-radius: 20px;
+    text-align: center;
+    background-color: #004F54;
+    cursor: pointer;
+}
+
+#create-page:hover{
+    background-color: #013b3f;
+}
+
+.form textarea{
+    height: 200px;
+}
+
+#page-heading {
+    border-radius: 20px;
+    color: #05545b;
+    font-family: Lora, serif;
+    font-size: 3.5em;
+    font-weight: 400;
+    height: 100%;
+    line-height: 3.0rem;
+    left: -1%;
+    position: relative;
+    text-align: center;
+    width: 100%;
+}

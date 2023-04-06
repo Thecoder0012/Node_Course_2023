@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Server-side rendering</title>
+    <link rel="stylesheet" href="../../assets/css/index.css" />
+    <link rel="stylesheet" href="../../assets/css/docs.css" />
+  </head>
+  <body>
+      <div class="header-intro">
+      <h1>Server side rendering</h1>
+      <br />
+      <p>When we server side render, we usually use templating engines, and sending variables to the html file.
+      </p>
+      <p>One can also create their own templating engine.</p>
+      <p>By reading the html paths and rendering them. <br>To read them you will need the filesystem import</p>
+
+      <pre>
+            <code>
+                import fs from "fs";
+
+                function render(page) {
+                const navbar = fs
+                    .readFileSync("./public/components/navbar/navbar.html")
+                    .toString();
+                return navbar + page;
+                }
+
+            
+            </code>
+        </pre>
+        <p>In the above code, we see that when a page is rendered, it will have the navbar with it returned.</p>
+        <p>This is a better practise than creating navbars every time in all the html files.</p>
+<br>
+        <p>To read a page, you should use the readFileSync method, and make it into a string.</p>
+
+        <pre>
+            <code>
+            function read(pagePath) {
+                return fs.readFileSync(pagePath).toString();
+                }
+            </code>
+        </pre>
+
+        <p>Example of rendering a specific page:</p>
+        <pre>
+            <code>
+                function renderDocsPage() {
+                const path = read("./public/pages/documentation/documentation.html");
+                const page = render(path);
+                return page;
+}
+            </code>
+        </pre>
+
+  
+    </div>
+  </body>
+</html>

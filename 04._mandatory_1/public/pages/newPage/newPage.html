@@ -6,8 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="../../assets/css/index.css" />
+        <link rel="stylesheet" href="../../assets/css/newpage.css" />
+
   </head>
   <body>
-    <h1>New page</h1>
+    
+
+    <div class="form-container">
+    <h2 id="page-heading" style="margin-left: 1px">New page</h2>
+    <div class="form">
+    <form name="page" id="page-form">
+        <input type="text" name="name" class="text-box" placeholder="Type in documentation name" required>
+        <br>
+        <textarea name="message" placeholder="Type in documentation content" required></textarea>
+        <br><br>
+        <button type="submit" id="create-page">Create</button>
+        </div>
+    </form>
+</div>
   </body>
 </html>

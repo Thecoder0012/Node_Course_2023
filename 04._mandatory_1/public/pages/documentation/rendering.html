@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rendering</title>
+    <link rel="stylesheet" href="../../assets/css/index.css" />
+    <link rel="stylesheet" href="../../assets/css/docs.css" />
+  </head>
+  <body>
+
+ <div class="header-intro">
+        <h1>Rendering html and loops</h1><br>
+        <p>To render html files, you need to 'return/send' the files in the get routes.</p>
+        <p>Instead of using the send method on the response object, you should use the sendFile method.</p>
+        <p>Before that you need to import path or simply just use __dirname + filepath.</p>
+        <p>If the html files are in the public folder, then you should tell express to use that static folder.</p>
+
+
+        <pre>
+           <code>
+            import express from 'express';
+            const app = express();
+            import path from 'path';
+
+            app.use(express.static("public")); // express has a static folder named public
+
+            app.get("/", (req, res) => {
+              res.sendFile(path.resolve(path.html)); // path.resolve() gives the absolute path for a file
+            });
+
+           </code>
+        </pre>
+
+        <p>Loops: Map, filter, Find methods </p>
+        <p>Map is used to create a new array with the existing values of an array that may be modified through the callback function.</p>
+        <p>Filter is used to filter through an array with a match to the condition</p>
+        <p>Find returns a specific element through the condition</p>
+        <pre>
+            <code>
+                letters.map((letter) => letter.toUpperCase());
+                numbers.filter((number) => number > 5);
+                values.find((value) => value.age === age);
+            </code>
+        </pre>
+    </div>
+
+  </body>
+</html>
