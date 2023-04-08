@@ -14,8 +14,15 @@
         <a href="/homepage">Home</a>
         <a href="/docs">Documentation</a>
         <a href="/newPage">Page</a>
-        <a href="/">Logout</a>
+        <a id="logout" href="/login">Logout</a>
       </nav>
     </header>
+
+    <script>
+      const logout = document.getElementById("logout");
+      logout.addEventListener('click',() => {
+        localStorage.clear();
+      });
+    </script>
   </body>
 </html>

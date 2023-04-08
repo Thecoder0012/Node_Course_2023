@@ -9,7 +9,15 @@ app.use(express.urlencoded({
 }));
 
 
+let username = "";
+let password = null
+
+
 app.get("/", (req, res) => {
+  res.send(template.renderSignUp());
+});
+
+app.get("/login", (req, res) => {
   res.send(template.renderLoginPage());
 });
 
@@ -57,17 +65,22 @@ app.get("/newPage", (req, res) => {
   res.send(template.renderNewPage());
 });
 
-app.post("/login", (req, res) => {
-  const {
-    username,
-    password
-  } = req.body;
-  if (username === "User" && Number(password) === 1234) {
-    res.redirect("/homepage");
-  } else {
-    res.redirect("/");
-  }
+
+app.post("/signup", (req, res) => {
+   return res.redirect("/login");
 });
+
+// app.post("/login", (req, res) => {
+//   const {
+//     username,
+//     password
+//   } = req.body;
+//   if (username === "User" && Number(password) === 1234) {
+//     res.redirect("/homepage");
+//   } else {
+//     res.redirect("/login");
+//   }
+// });
 
 app.listen(8080, () => {
   console.log(Date())

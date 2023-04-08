@@ -16,6 +16,11 @@ function renderLoginPage() {
   return path;
 }
 
+function renderSignUp() {
+  const path = read("./public/pages/login/signup.html");
+  return path;
+}
+
 function renderDocsPage() {
   const path = read("./public/pages/documentation/documentation.html");
   const page = render(path);
@@ -86,6 +91,7 @@ export default {
   read,
   renderHomePage,
   renderLoginPage,
+  renderSignUp,
   renderDocsPage,
   renderNewPage,
   renderDocsIntro,
