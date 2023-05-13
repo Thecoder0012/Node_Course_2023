@@ -1,8 +1,15 @@
 /* eslint-disable semi */
-const express = require("express");
+import express from 'express';
 const app = express();
 
+import guardsRouter from './routers/guardsRouter.js';
+import tanksRouter from "./routers/tanksRouter.js";
+import visitorsRouter from "./routers/tanksRouter.js";
+
+
+
 app.use(express.static("public")); // express has a static folder named public
+app.use([guardsRouter,tanksRouter,visitorsRouter]);
 
 // const tanks = [
 //   {name: "Leopard", age: 50},
@@ -11,7 +18,7 @@ app.use(express.static("public")); // express has a static folder named public
 
 // const tanksUtility = require('./utilities/tanks.js');
 // console.log(tanksUtility.getTanks());
-const { getTanks, addTank } = require("./utilities/tanks.js");
+// import { getTanks, addTank } from "./utilities/tanks.js";
 
 let visitorCount = 0;
 
